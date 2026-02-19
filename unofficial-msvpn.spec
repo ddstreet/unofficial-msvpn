@@ -9,12 +9,14 @@
 
 
 Name:           unofficial-msvpn
-Version:        0.0.1
+Version:        0.0.2
 Release:        1%{?dist}
 Summary:        Dynamic rpm packager for msvpn
 License:        GPLv3
 
 Source1:        microsoft-azurevpnclient
+
+Requires:       zenity
 
 Requires(pre):  wget >= 2
 
@@ -151,5 +153,8 @@ rmdir ${TMPDIR}
 %ghost %{_datarootdir}/doc/microsoft-azurevpnclient/changelog.gz
 
 %changelog
+* Thu Feb 19 2026 Dan Streetman <ddstreet@ieee.org> - 0.0.2-1
+- add zenity dep
+
 * Wed Feb 18 2026 ddstreet
 - 
