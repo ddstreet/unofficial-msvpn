@@ -105,10 +105,10 @@ install -v -m 0755 -t /opt/microsoft/microsoft-azurevpnclient \
 # The program needs net admin capability to be able to manage the tun interface
 setcap cap_net_admin+eip /opt/microsoft/microsoft-azurevpnclient/microsoft-azurevpnclient
 
-install -v -m 0644 -t %{_datarootdir}/polkit-1/rules.d \
-        usr/share/polkit-1/rules.d/microsoft-azurevpnclient.rules
 # Wrong path to the application in this polkit rules config
 sed -i -e 's,"/opt/microsoft/microsoft-azurevpnclient","/opt/microsoft/microsoft-azurevpnclient/microsoft-azurevpnclient",' \
+        usr/share/polkit-1/rules.d/microsoft-azurevpnclient.rules
+install -v -m 0644 -t %{_datarootdir}/polkit-1/rules.d \
         usr/share/polkit-1/rules.d/microsoft-azurevpnclient.rules
 
 install -v -m 0644 -t %{_datarootdir}/icons \
