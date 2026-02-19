@@ -55,7 +55,7 @@ dpkg-deb -x %{_datarootdir}/%{name}-%{version}/debs/%{msvpn_deb} %{msvpn_dir}
 pushd %{msvpn_dir}
 
 pushd opt/microsoft/microsoft-azurevpnclient/lib
-install -v -m 0644 -t /opt/microsoft/microsoft-azurevpnclient/lib \
+install -v -m 0755 -t /opt/microsoft/microsoft-azurevpnclient/lib \
         libLinuxCore.so \
         libXplatSharedLibrary.so \
         libapp.so \
