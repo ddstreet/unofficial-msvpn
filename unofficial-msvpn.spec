@@ -23,6 +23,7 @@ Requires:       zenity
 Requires(pre):  wget >= 2
 
 Requires(post): dpkg
+Requires(post): /usr/bin/setcap
 Requires(post): /usr/bin/install
 Requires(post): /usr/bin/mktemp
 
@@ -115,6 +116,9 @@ rm -rf "%{msvpn_dir}"
 
 popd
 rmdir ${TMPDIR}
+
+# The program needs net admin capability to be able to manage the tun interface
+setcap cap_net_admin+eip /opt/microsoft/microsoft-azurevpnclient/microsoft-azurevpnclient
 } > %{_datarootdir}/%{name}-%{version}/logs/post.log
 
 %files
