@@ -9,7 +9,7 @@
 
 
 Name:           unofficial-msvpn
-Version:        0.0.5
+Version:        0.0.6
 Release:        1%{?dist}
 Summary:        Dynamic rpm packager for msvpn
 License:        GPLv3
@@ -166,6 +166,9 @@ setcap cap_net_admin+eip /opt/microsoft/microsoft-azurevpnclient/microsoft-azure
 %ghost %{_datarootdir}/doc/microsoft-azurevpnclient/changelog.gz
 
 %changelog
+* Thu Feb 19 2026 Dan Streetman <ddstreet@ieee.org> - 0.0.6-1
+- add admin net cap to binary so it can manage the tun interface
+
 * Thu Feb 19 2026 Dan Streetman <ddstreet@ieee.org> - 0.0.5-1
 - fix missing -t install line
 
