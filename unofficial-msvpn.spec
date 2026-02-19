@@ -99,6 +99,8 @@ install -v -m 0644 -t /var/lib/polkit-1/localauthority/50-local.d \
 
 install -v -m 0755 -t /opt/microsoft/microsoft-azurevpnclient \
         opt/microsoft/microsoft-azurevpnclient/microsoft-azurevpnclient
+# The program needs net admin capability to be able to manage the tun interface
+setcap cap_net_admin+eip /opt/microsoft/microsoft-azurevpnclient/microsoft-azurevpnclient
 
 install -v -m 0644 -t %{_datarootdir}/icons \
         usr/share/icons/microsoft-azurevpnclient.png
@@ -116,9 +118,6 @@ rm -rf "%{msvpn_dir}"
 
 popd
 rmdir ${TMPDIR}
-
-# The program needs net admin capability to be able to manage the tun interface
-setcap cap_net_admin+eip /opt/microsoft/microsoft-azurevpnclient/microsoft-azurevpnclient
 } > %{_datarootdir}/%{name}-%{version}/logs/post.log
 
 %files
