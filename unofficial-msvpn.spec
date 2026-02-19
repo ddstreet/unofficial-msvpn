@@ -9,7 +9,7 @@
 
 
 Name:           unofficial-msvpn
-Version:        0.0.3
+Version:        0.0.4
 Release:        1%{?dist}
 Summary:        Dynamic rpm packager for msvpn
 License:        GPLv3
@@ -162,6 +162,9 @@ rmdir ${TMPDIR}
 %ghost %{_datarootdir}/doc/microsoft-azurevpnclient/changelog.gz
 
 %changelog
+* Thu Feb 19 2026 Dan Streetman <ddstreet@ieee.org> - 0.0.4-1
+- add root CA the application needs
+
 * Thu Feb 19 2026 Dan Streetman <ddstreet@ieee.org> - 0.0.3-1
 - add polkit file from deb
 
