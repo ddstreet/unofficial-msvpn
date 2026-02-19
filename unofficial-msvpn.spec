@@ -23,6 +23,7 @@ Requires:       zenity
 Requires(pre):  wget >= 2
 
 Requires(post): dpkg
+Requires(post): sed
 Requires(post): /usr/bin/setcap
 Requires(post): /usr/bin/install
 Requires(post): /usr/bin/mktemp
@@ -94,6 +95,8 @@ install -v -m 0644 -t /opt/microsoft/microsoft-azurevpnclient/data/flutter_asset
         flutter_assets/assets/images/capture.png
 popd
 
+# The polkit pkla file uses 'sudo' group which is correct on ubuntu, but fedora uses 'wheel'
+sed -i -e 's/sudo/wheel/g' var/lib/polkit-1/localauthority/50-local.d/10-microsoft-azurevpnclient.pkla
 install -v -m 0644 -t /var/lib/polkit-1/localauthority/50-local.d \
         var/lib/polkit-1/localauthority/50-local.d/10-microsoft-azurevpnclient.pkla
 
