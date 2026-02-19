@@ -15,6 +15,8 @@ Summary:        Dynamic rpm packager for msvpn
 License:        GPLv3
 
 Source1:        microsoft-azurevpnclient
+# http://cacerts.digicert.com/DigiCertGlobalRootG2.crt converted to PEM
+Source2:        DigiCertGlobalRootG2.pem
 
 Requires:       zenity
 
@@ -29,6 +31,7 @@ Dynamic rpm packager for msvpn
 
 %install
 install -D -m 0755 -t %{buildroot}%{_bindir} %{SOURCE1}
+install -D -m 0644 -t %{buildroot}%{_sysconfdir}/pki/tls/certs %{SOURCE2}
 install -d %{buildroot}%{_datarootdir}/%{name}-%{version}/debs
 install -d %{buildroot}%{_datarootdir}/%{name}-%{version}/logs
 install -d %{buildroot}%{_datarootdir}/doc/microsoft-azurevpnclient
@@ -116,6 +119,7 @@ rmdir ${TMPDIR}
 
 %files
 %{_bindir}/microsoft-azurevpnclient
+%{_sysconfdir}/pki/tls/certs/DigiCertGlobalRootG2.pem
 /opt/microsoft/microsoft-azurevpnclient
 %{_datarootdir}/doc/microsoft-azurevpnclient
 
