@@ -9,7 +9,7 @@
 
 
 Name:           unofficial-msvpn
-Version:        0.0.7
+Version:        0.0.8
 Release:        1%{?dist}
 Summary:        Dynamic rpm packager for msvpn
 License:        GPLv3
@@ -172,6 +172,9 @@ rmdir ${TMPDIR}
 %ghost %{_datarootdir}/doc/microsoft-azurevpnclient/changelog.gz
 
 %changelog
+* Thu Feb 19 2026 Dan Streetman <ddstreet@ieee.org> - 0.0.8-1
+- move sed correction of polkit rules file to before we install it
+
 * Thu Feb 19 2026 Dan Streetman <ddstreet@ieee.org> - 0.0.7-1
 - fix the polkit conf files
 
