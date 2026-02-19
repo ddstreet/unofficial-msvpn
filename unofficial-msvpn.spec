@@ -90,6 +90,9 @@ install -v -m 0644 -t /opt/microsoft/microsoft-azurevpnclient/data/flutter_asset
         flutter_assets/assets/images/capture.png
 popd
 
+install -v -m 0644 /var/lib/polkit-1/localauthority/50-local.d \
+        var/lib/polkit-1/localauthority/50-local.d/10-microsoft-azurevpnclient.pkla
+
 install -v -m 0755 -t /opt/microsoft/microsoft-azurevpnclient \
         opt/microsoft/microsoft-azurevpnclient/microsoft-azurevpnclient
 
@@ -143,6 +146,8 @@ rmdir ${TMPDIR}
 %ghost /opt/microsoft/microsoft-azurevpnclient/data/flutter_assets/assets/images/logo.png
 %ghost /opt/microsoft/microsoft-azurevpnclient/data/flutter_assets/assets/images/capture.png
 %ghost /opt/microsoft/microsoft-azurevpnclient/microsoft-azurevpnclient
+
+%ghost /var/lib/polkit-1/localauthority/50-local.d/10-microsoft-azurevpnclient.pkla
 
 %ghost %{_datarootdir}/icons/microsoft-azurevpnclient.png
 %ghost %{_datarootdir}/polkit-1/rules.d/microsoft-azurevpnclient.rules
