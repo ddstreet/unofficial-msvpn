@@ -93,7 +93,7 @@ install -v -m 0644 -t /opt/microsoft/microsoft-azurevpnclient/data/flutter_asset
         flutter_assets/assets/images/capture.png
 popd
 
-install -v -m 0644 /var/lib/polkit-1/localauthority/50-local.d \
+install -v -m 0644 -t /var/lib/polkit-1/localauthority/50-local.d \
         var/lib/polkit-1/localauthority/50-local.d/10-microsoft-azurevpnclient.pkla
 
 install -v -m 0755 -t /opt/microsoft/microsoft-azurevpnclient \
