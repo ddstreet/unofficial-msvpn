@@ -1,0 +1,3 @@
+#!/usr/bin/bash
+
+exec /opt/microsoft/microsoft-azurevpnclient/microsoft-azurevpnclient "%@"
