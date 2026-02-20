@@ -19,6 +19,7 @@ Source1:        microsoft-azurevpnclient
 Source2:        DigiCertGlobalRootG2.pem
 
 Requires:       zenity
+Requires:       polkit-pkla-compat
 
 Requires(pre):  wget >= 2
 
