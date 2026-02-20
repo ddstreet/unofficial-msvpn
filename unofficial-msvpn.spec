@@ -128,6 +128,18 @@ popd
 rmdir ${TMPDIR}
 } > %{_datarootdir}/%{name}-%{version}/logs/post.log
 
+echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+echo "!!!\vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv/!!!"
+echo "!!!>                                                                         <!!!"
+echo "!!!> The user running microsoft-azurevpnclient MUST be in the 'wheel' group! <!!!"
+echo "!!!> You can do that by running this command *as your user*, NOT root:       <!!!"
+echo "!!!> sudo usermod -aG wheel \$USER                                            <!!!"
+echo "!!!>                                                                         <!!!"
+echo "!!!/^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\!!!"
+echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+
 %files
 %{_bindir}/microsoft-azurevpnclient
 %{_sysconfdir}/pki/tls/certs/DigiCertGlobalRootG2.pem
