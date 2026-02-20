@@ -9,7 +9,7 @@
 
 
 Name:           unofficial-msvpn
-Version:        0.0.8
+Version:        0.0.9
 Release:        1%{?dist}
 Summary:        Dynamic rpm packager for msvpn
 License:        GPLv3
@@ -185,6 +185,10 @@ echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 %ghost %{_datarootdir}/doc/microsoft-azurevpnclient/changelog.gz
 
 %changelog
+* Fri Feb 20 2026 Dan Streetman <ddstreet@ieee.org> - 0.0.9-1
+- Add big warning that user running the vpn must be in the wheel group
+- Add dep on polkit-pkla-compat
+
 * Thu Feb 19 2026 Dan Streetman <ddstreet@ieee.org> - 0.0.8-1
 - move sed correction of polkit rules file to before we install it
 
